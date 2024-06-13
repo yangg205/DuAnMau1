@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,58 +119,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -189,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ced0a43dda4e8384cadbb2a73f590138
-      internalID: -1687787506
+      spriteID: bcaad8f849e9b7e4790f4d1bce91a535
+      internalID: -1960156156
       vertices: []
       indices: 
       edges: []
@@ -210,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20f5bfba5dd58134db91f4290dc442e2
-      internalID: 645207926
+      spriteID: 2424cd87debcb884a974df0bedc285a5
+      internalID: -694965693
       vertices: []
       indices: 
       edges: []
@@ -231,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bed597b2eca50445a2f9dde32fcbb16
-      internalID: -135339360
+      spriteID: 66e2ad3d169e64c4994ce659940e1fdd
+      internalID: -1048571109
       vertices: []
       indices: 
       edges: []
@@ -252,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 996d93e6c7c1fb041ae3be608a963b0a
-      internalID: 367190364
+      spriteID: ca2539d558854b84fbaf16e773fdbda4
+      internalID: 1487959845
       vertices: []
       indices: 
       edges: []
@@ -273,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de93e67289ef04c46bf224e245ccb0ac
-      internalID: 1824993083
+      spriteID: 8f76ae1c293e02f4393480303ab697c7
+      internalID: -862525954
       vertices: []
       indices: 
       edges: []
@@ -294,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f617d0a2a7570714682c675bf6a42a54
-      internalID: 823240008
+      spriteID: adc21732233c1304488ac7137531c6f5
+      internalID: 226218627
       vertices: []
       indices: 
       edges: []
@@ -315,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4913fdf1aa0dab94c94db983f4510e31
-      internalID: 123334413
+      spriteID: a3cc8724f3a11a4468346d6cb5724660
+      internalID: 2091881592
       vertices: []
       indices: 
       edges: []
@@ -336,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f5b10b5d8dd42a4ca59faa37cad726e
-      internalID: -116940916
+      spriteID: a9d1b2770eeac6d4c8cc091ff256f99c
+      internalID: -1616209311
       vertices: []
       indices: 
       edges: []
@@ -357,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eabf86f8d78af547890c23492e1d602
-      internalID: 668784493
+      spriteID: a7cda7c8c66824244ac9a7146a9e5091
+      internalID: -1356040612
       vertices: []
       indices: 
       edges: []
@@ -378,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9098aefe42a8c754ebb3e5785a97b7db
-      internalID: -483172766
+      spriteID: 8e803d868033e544295c3d058f7d4492
+      internalID: -1098368814
       vertices: []
       indices: 
       edges: []
@@ -399,8 +347,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b926a18c24cf1034ca06ad8263ae6d05
-      internalID: 323375079
+      spriteID: 4f8ab6cac5b621d45b8effa3402c4cba
+      internalID: 546886157
       vertices: []
       indices: 
       edges: []
@@ -420,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc235d7e20cf2d045a18cc112bac12fd
-      internalID: -1255197842
+      spriteID: 4a4bf678e2be58643a38a1b92256838c
+      internalID: 928184575
       vertices: []
       indices: 
       edges: []
@@ -437,18 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SPA_Coins_0: -1687787506
-      SPA_Coins_1: 645207926
-      SPA_Coins_10: 323375079
-      SPA_Coins_11: -1255197842
-      SPA_Coins_2: -135339360
-      SPA_Coins_3: 367190364
-      SPA_Coins_4: 1824993083
-      SPA_Coins_5: 823240008
-      SPA_Coins_6: 123334413
-      SPA_Coins_7: -116940916
-      SPA_Coins_8: 668784493
-      SPA_Coins_9: -483172766
+      SPA_Coins_0: -1960156156
+      SPA_Coins_1: -694965693
+      SPA_Coins_10: 546886157
+      SPA_Coins_11: 928184575
+      SPA_Coins_2: -1048571109
+      SPA_Coins_3: 1487959845
+      SPA_Coins_4: -862525954
+      SPA_Coins_5: 226218627
+      SPA_Coins_6: 2091881592
+      SPA_Coins_7: -1616209311
+      SPA_Coins_8: -1356040612
+      SPA_Coins_9: -1098368814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpSpeed = 10f;
     [SerializeField] float climbSpeed = 1f;
-    private Rigidbody2D rigidbody2D;
-    Vector2 moveInput;
+*//*    private Rigidbody2D rigidbody2D;
+*//*    Vector2 moveInput;
     private Animator animator;
     CapsuleCollider2D capsuleCollider2D;
     private float gravotyScaleAtStart;
@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        gravityScaleAtStart = rigidbody2D.gravityScale;
-        isAlive = true;
+*//*        gravityScaleAtStart = rigidbody2D.gravityScale;
+*//*        isAlive = true;
     }
     void Update()
     {
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (value.isPressed)
         {
             Debug.Log(">>>>> Jump ");
-            rigidbody2D.velocity += new Vector2(0, jumpSpeed);
+            GetComponent<Rigidbody2D>().velocity += new Vector2(0, jumpSpeed);
         }
     }
     void OnFire()
@@ -78,8 +78,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Run()
     {
-        var moveVelocity = new Vector2(moveInput.x * moveSpeed, rigidbody2D.velocity.y);
-        rigidbody2D.velocity = moveVelocity;
+        var moveVelocity = new Vector2(moveInput.x * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        GetComponent<Rigidbody2D>().velocity = moveVelocity;
 
         bool playerhorizontalSpeed = Mathf.Abs(moveInput.x) > Mathf.Epsilon;
         animator.SetBool("isRun", playerhorizontalSpeed);
@@ -90,10 +90,10 @@ public class PlayerMovement : MonoBehaviour
     // xoay huong nhan vat theo chieu chuyen dong
     void FlipSprite()
     {
-        bool playerHasHorizontalSpeed = Mathf.Abs(rigidbody2D.velocity.x) > Mathf.Epsilon;
+        bool playerHasHorizontalSpeed = Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rigidbody2D.velocity.x), 1f);
+            transform.localScale = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x), 1f);
         }
     }
     void ClimbLadder()
@@ -101,16 +101,16 @@ public class PlayerMovement : MonoBehaviour
         var isTouchingLadder = capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing"));
         if (!isTouchingLadder)
         {
-            rigidbody2D.gravityScale = gravityScaleAtStart;
+            GetComponent<Rigidbody2D>().gravityScale = gravityScaleAtStart;
             return;
         }
-        var climbVelocity = new Vector2(rigidbody2D.velocity.x, moveInput.y * climbSpeed);
-        rigidbody2D.velocity = climbVelocity;
+        var climbVelocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveInput.y * climbSpeed);
+        GetComponent<Rigidbody2D>().velocity = climbVelocity;
 
         var playerHasVerticalSpeed = Mathf.Abs(moveInput.y) > Mathf.Epsilon;
         animator.SetBool("isClimb", playerHasVerticalSpeed);
         //tat gravity khi leo thang
-        rigidbody2D.gravityScale = 0;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
     }
     void Die()
     {
@@ -119,8 +119,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isAlive = false;
             animator.SetTrigger("Dying");
-            rigidbody2D.velocity = new Vector2(0, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             FindObjectOfType<GameController>().ProcessPlayerDeath;
         }
     }
 }
+*/

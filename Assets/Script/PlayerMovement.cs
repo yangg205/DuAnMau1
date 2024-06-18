@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("quai"))
+        if (other.gameObject.CompareTag("quai") || other.gameObject.CompareTag("trap"))
         {
             //bat su kien nhan vat cham quai
             //mat 1 mang reload lai mang choi

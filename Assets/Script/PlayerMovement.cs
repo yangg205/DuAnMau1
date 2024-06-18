@@ -12,67 +12,44 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpSpeed = 10f;
     [SerializeField] float climbSpeed = 1f;
-    public GameObject bulletprefabs;
-    public Transform guntransform;
-    private bool right = true;
     private Rigidbody2D rigidbody2D;
     Vector2 moveInput;
     private Animator animator;
     CapsuleCollider2D capsuleCollider2D;
-    private float gravityScaleAtStart;
-    [SerializeField]
-    private static int lives = 3;
-    [SerializeField]
-    private GameObject[] _livesimage;
-    [SerializeField]
-    private GameObject _Gameover;
-    [SerializeField]
-    private GameObject _Win;
-    boss _boss;
+    private float gravotyScaleAtStart;
+    private bool isAlive;
+    [SerializeField] GameObject Bullet;
+    [SerializeField] Transform Gun;
     void Start()
     {
-        _boss = FindObjectOfType<boss>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         gravityScaleAtStart = rigidbody2D.gravityScale;
-    }
-
-    // Update is called once per frame
-    private void Fire()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            //tao ra dan
-            var oneBullet = Instantiate(bulletprefabs, guntransform.position, Quaternion.identity);
-            //dan bay
-            if (moveInput.x == -1) right = false;
-            var velocity = new Vector2(5f, 0);
-            if (right == false)
-            {
-                velocity = new Vector2(-5f, 0);
-            }
-
-            oneBullet.GetComponent<Rigidbody2D>().velocity = velocity;
-            Destroy(oneBullet, 2f);//huy dien sau 2s
-
-        }
+        isAlive = true;
     }
     void Update()
     {
         Run();
         FlipSprite();
         ClimbLadder();
-        Fire();
+        Die();
     }
     void OnMove(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
         moveInput = value.Get<Vector2>();
-        Debug.Log(">>>>> Move Input: " + moveInput);
-
+        Debug.Log("===> Move Input: " + moveInput);
     }
     void OnJump(InputValue value)
     {
+        if (!isAlive)
+        {
+            return ;
+        }
         var isTouchingGround = capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
         if (!isTouchingGround) return;
         if (value.isPressed)
@@ -80,6 +57,24 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log(">>>>> Jump ");
             rigidbody2D.velocity += new Vector2(0, jumpSpeed);
         }
+    }
+    void OnFire()
+    {
+        if (!isAlive)
+        {
+            return;
+        }
+        Debug.Log("===> Fire");
+        var oneBullet = Instantiate(Bullet, Gun.position, transform.rotation);
+        if(transform.localScale.x < 0)
+        {
+            oneBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
+        }
+        else
+        {
+            oneBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
+        }
+        Destroy(oneBullet, 2);
     }
     void Run()
     {
@@ -117,37 +112,15 @@ public class PlayerMovement : MonoBehaviour
         //tat gravity khi leo thang
         rigidbody2D.gravityScale = 0;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    void Die()
     {
-        if (other.gameObject.CompareTag("quai"))
+        var isTouchingEnemy = capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Trap"));
+        if(isTouchingEnemy)
         {
-            //bat su kien nhan vat cham quai
-            //mat 1 mang reload lai mang choi
-            lives -= 1;
-            // xoa 1 anh trai tim
-            for (int i = 0; i < 3; i++)
-            {
-                if (i < lives)
-                {
-                    _livesimage[i].SetActive(true);
-                }
-                else
-                {
-                    _livesimage[i].SetActive(false);
-                }
-            }
-            if (lives == 0)
-            {
-                //hien panel
-                _Gameover.SetActive(true);
-                //dung game
-                Time.timeScale = 0;
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-            
+            isAlive = false;
+            animator.SetTrigger("Dying");
+            rigidbody2D.velocity = new Vector2(0, 0);
+            FindObjectOfType<GameController>().ProcessPlayerDeath;
         }
     }
 }

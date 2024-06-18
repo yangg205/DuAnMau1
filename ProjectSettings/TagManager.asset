@@ -17,11 +17,11 @@ TagManager:
   - UI
   - Ground
   - Climbing
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Coin
+  - Player
+  - Bullet
+  - Interactable
+  - Enemy
   - 
   - 
   - 
@@ -65,4 +65,13 @@ TagManager:
     locked: 0
   - name: gameover
     uniqueID: 4002418489
+    locked: 0
+  - name: Coin
+    uniqueID: 33838777
+    locked: 0
+  - name: Exit
+    uniqueID: 3589047517
+    locked: 0
+  - name: Enemy
+    uniqueID: 1951602871
     locked: 0

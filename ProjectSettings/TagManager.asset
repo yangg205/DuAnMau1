@@ -5,9 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ladder
-  - bullet
-  - coin
-  - quai
   layers:
   - Default
   - TransparentFX
@@ -62,7 +59,4 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1629849627
-    locked: 0
-  - name: gameover
-    uniqueID: 4002418489
     locked: 0

@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ladder
-  - bullet
-  - coin
-  - quai
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -17,12 +16,12 @@ TagManager:
   - UI
   - Ground
   - Climbing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Background
+  - Enemy
+  - Trap
+  - Bullet
+  - Interactable
   - 
   - 
   - 
@@ -60,9 +59,18 @@ TagManager:
   - name: Climbing
     uniqueID: 1172311347
     locked: 0
+  - name: Enemy
+    uniqueID: 3712692079
+    locked: 0
+  - name: Trap
+    uniqueID: 1418985881
+    locked: 0
+  - name: Bullet
+    uniqueID: 1745574893
+    locked: 0
+  - name: Interactable
+    uniqueID: 436852223
+    locked: 0
   - name: Player
     uniqueID: 1629849627
-    locked: 0
-  - name: gameover
-    uniqueID: 4002418489
     locked: 0
